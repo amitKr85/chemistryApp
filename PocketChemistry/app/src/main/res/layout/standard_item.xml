@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="8dp">
+        <ImageView
+            android:id="@+id/standard_image_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/icon_9"/>
+        <TextView
+            android:id="@+id/standard_text_view"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.8"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:gravity="center_vertical"
+            android:text="9th Standard"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/view_topics_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/view_topics"
+            android:background="@drawable/home_category_button_style"/>
+        <Button
+            android:id="@+id/view_book_button"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/view_book"
+            android:background="@drawable/home_category_button_style"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/topics_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/topics_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="one\ntwo\nthree\nfour\nfive"
+            android:padding="16dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+
+    </LinearLayout>
+</LinearLayout>

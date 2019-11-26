@@ -1,0 +1,160 @@
+<resources>
+    <string name="app_name">Pocket Chemistry</string>
+
+    <string name="books">Books</string>
+    <string name="solutions">Solutions</string>
+    <string name="notes">Notes</string>
+    <string name="imp_questions">Imp. Questions</string>
+
+    <string name="select_standard">Select Standard</string>
+    <string name="ninth_standard">9th Standard</string>
+    <string name="tenth_standard">10th Standard</string>
+    <string name="eleventh_standard">11th Standard</string>
+    <string name="twelfth_standard">12th Standard</string>
+
+    <string name="hide_topics">Hide Topics</string>
+    <string name="view_topics">View Topics</string>
+    <string name="view_book">View Book</string>
+    <string name="view_subtopics">View Sub-Topics</string>
+    <string name="hide_subtopics">Hide Sub-Topics</string>
+    <string name="download_chapter">Download Chapter</string>
+    <string name="chapter_downloading">Downloading Chapter</string>
+    <string name="open_chapter">Open Chapter</string>
+    <string name="chapter_unavailable">Chapter Unavailable</string>
+
+    <string name="chapter_1">Chapter 1</string>
+    <string name="chapter_2">Chapter 2</string>
+    <string name="chapter_3">Chapter 3</string>
+    <string name="chapter_4">Chapter 4</string>
+    <string name="chapter_5">Chapter 5</string>
+    <string name="chapter_6">Chapter 6</string>
+    <string name="chapter_7">Chapter 7</string>
+    <string name="chapter_8">Chapter 8</string>
+    <string name="chapter_9">Chapter 9</string>
+    <string name="chapter_10">Chapter 10</string>
+    <string name="chapter_11">Chapter 11</string>
+
+
+    <string-array name="ninth_topics">
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+    </string-array>
+    <string-array name="ninth_dummy_chapter_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+
+    <string-array name="tenth_topics">
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+    </string-array>
+    <string-array name="tenth_dummy_chapter_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+
+    <string-array name="eleventh_topics">
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+        <item>Dummy Chapter</item>
+    </string-array>
+    <string-array name="eleventh_dummy_chapter_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+
+    <string-array name="twelfth_topics">
+        <item>The Solid State</item>
+        <item>Solutions</item>
+        <item>Electrochemistry</item>
+        <item>Chemical Kinetics</item>
+        <item>Surface Chemistry</item>
+        <item>General Principles and Processes of Isolation of Elements</item>
+        <item>The p-Block Elements</item>
+        <item>The d-and f-Block Elements</item>
+        <item>Coordination Compounds</item>
+    </string-array>
+    <string-array name="twelfth_the_solid_state_sub_topics">
+        <item>General Characteristics of Solid State</item>
+        <item>Amorphous and Crystalline Solids</item>
+        <item>Classification of Crystalline Solids</item>
+        <item>Crystal Lattices and Unit Cells</item>
+    </string-array>
+    <string-array name="twelfth_solutions_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_electrochemistry_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_chemical_kinetics_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_surface_chemistry_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_general_principles_and_processes_of_isolation_of_elements_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_the_p_block_elements_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_the_d_and_f_block_elements_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+    <string-array name="twelfth_coordination_compounds_sub_topics">
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+        <item>Dummy Sub-topic</item>
+    </string-array>
+
+
+
+</resources>
