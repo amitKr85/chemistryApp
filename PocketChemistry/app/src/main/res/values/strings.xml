@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Pocket Chemistry</string>
+    <string name="app_name">Atomic Chemistry</string>
 
     <string name="books">Books</string>
     <string name="solutions">Solutions</string>
@@ -15,12 +15,19 @@
     <string name="hide_topics">Hide Topics</string>
     <string name="view_topics">View Topics</string>
     <string name="view_book">View Book</string>
+    <string name="view_solution">View Solution</string>
     <string name="view_subtopics">View Sub-Topics</string>
     <string name="hide_subtopics">Hide Sub-Topics</string>
     <string name="download_chapter">Download Chapter</string>
+    <string name="download_solution">Download Solution</string>
     <string name="chapter_downloading">Downloading Chapter</string>
+    <string name="solution_downloading">Downloading Solution</string>
     <string name="open_chapter">Open Chapter</string>
+    <string name="open_solution">Open Solution</string>
+    <string name="opening_chapter">Opening Chapter</string>
+    <string name="opening_solution">Opening Solution</string>
     <string name="chapter_unavailable">Chapter Unavailable</string>
+    <string name="solution_unavailable">Solution Unavailable</string>
 
     <string name="chapter_1">Chapter 1</string>
     <string name="chapter_2">Chapter 2</string>

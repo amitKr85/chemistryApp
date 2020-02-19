@@ -38,7 +38,6 @@
             android:layout_weight="1"
             android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
             android:text="@string/view_topics"
             android:background="@drawable/home_category_button_style"/>
@@ -48,7 +47,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginTop="8dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/view_book"
@@ -59,17 +58,20 @@
         android:id="@+id/topics_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
 
-        <TextView
-            android:id="@+id/topics_text_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="one\ntwo\nthree\nfour\nfive"
-            android:padding="16dp"
-            android:fontFamily="sans-serif"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+<!--        <TextView-->
+<!--            android:id="@+id/topics_text_view"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="one\ntwo\nthree\nfour\nfive"-->
+<!--            android:padding="16dp"-->
+<!--            android:fontFamily="sans-serif"-->
+<!--            android:textStyle="bold"-->
+<!--            android:textSize="18sp"/>-->
 
 
     </LinearLayout>
