@@ -2,27 +2,39 @@ package com.example.atomicchemistry;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DownloadManager;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class StandardBookActivity extends AppCompatActivity {
 
+    public static final String LOG_TAG = "StandardBookActivity";
     public static final String PARAM_STANDARD = "standard_value";
     public static final String PARAM_CATEGORY = "category_value";
     private final String logtag = "StandardBookActivity";
     public static final String BOOKS_DIR = "books";
     public static final String SOLUTION_DIR = "solution";
+    public static final String NOTES_DIR = "notes";
+    public static final String IMP_QUESTIONS_DIR = "imp_questions";
+    public static final String SAMPLE_PAPERS_DIR = "sample_papers";
     private int mStdVal=9;
-    private String mCategory;
+    private int mCatValue=0;
+    public ChapterArrayAdapter mAdapter;
+    public BroadcastReceiver mBroadcastReciever;
 
-    String mUrl = "http://dummix.cf/assignment_ga.pdf";
+    public static String mUrl = "http://dummix.cf/assignment_ga.pdf";
     //  dummy chapter list for 9,10,11 and given ones for 12
-    public final List<List<String>> bookUrlList = Arrays.asList(
+    public static final List<List<String>> bookUrlList = Arrays.asList(
             Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
             Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
             Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
@@ -36,7 +48,25 @@ public class StandardBookActivity extends AppCompatActivity {
                     "http://dummix.cf/chemistry/books/12/lech108.pdf",
                     "http://dummix.cf/chemistry/books/12/lech109.pdf"));
 
-    public final List<List<String>> solutionUrlList = Arrays.asList(
+    public static final List<List<String>> solutionUrlList = Arrays.asList(
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl));
+
+    public static final List<List<String>> notesUrlList = Arrays.asList(
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl));
+
+    public static final List<List<String>> impQuestionsUrlList = Arrays.asList(
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
+            Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl));
+
+    public static final List<List<String>> samplePapersUrlList = Arrays.asList(
             Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
             Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
             Arrays.asList(mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl,mUrl),
@@ -47,33 +77,85 @@ public class StandardBookActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_standard_book);
 
-//        TextView textView = findViewById(R.id.standard_book_text_view);
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
-//            textView.setText(bundle.getString(PARAM_STANDARD));
-            mStdVal = Integer.valueOf(bundle.getString(PARAM_STANDARD));
-            mCategory = bundle.getString(PARAM_CATEGORY);
+            mStdVal = Integer.valueOf(bundle.getString(PARAM_STANDARD,"9"));
+            mCatValue = bundle.getInt(PARAM_CATEGORY, 0);
         }
+        String category = MainActivity.CAT_STRINGS[mCatValue];
 
         int titleResID = getResources().getIdentifier(MainActivity.STD_STRINGS[mStdVal-9]+"_standard","string", getPackageName());
         setTitle(titleResID);
 
+        // getting source urls
         int arrResId = getResources().getIdentifier(MainActivity.STD_STRINGS[mStdVal-9]+"_topics","array",getPackageName());
         List<String> topics = Arrays.asList(getResources().getStringArray(arrResId));
-        List<List<String>> urlsList = mCategory.equals(MainActivity.CAT_STRINGS[1]) ? solutionUrlList : bookUrlList;
+        List<List<String>> urlsList = bookUrlList;
+        if(mCatValue==1)
+            urlsList = solutionUrlList;
+        else if(mCatValue==2)
+            urlsList = notesUrlList;
+        else if(mCatValue==3)
+            urlsList = impQuestionsUrlList;
+        else if(mCatValue==4)
+            urlsList= samplePapersUrlList;
+
         List<String> urls = urlsList.get(mStdVal-9);
         ArrayList<ChapterItem> chapterList = new ArrayList<>();
         for(int i=0;i<topics.size();++i){
             String title = topics.get(i);
             String url = i<urls.size() ? urls.get(i) : null;
             List<String> subTopics = getSubTopics(title);
-            chapterList.add(new ChapterItem(mStdVal, title, url, subTopics));
+            chapterList.add(new ChapterItem(title, url, subTopics));
         }
 
-        ChapterArrayAdapter adapter = new ChapterArrayAdapter(this, chapterList, mCategory);
+//        Log.i(LOG_TAG,"Data Prepared");
+        mAdapter = new ChapterArrayAdapter(this, chapterList, mCatValue, mStdVal);
+//        Log.i(LOG_TAG,"Adapter Prepared");
         ListView listView = findViewById(R.id.chapter_list_view);
-        listView.setAdapter(adapter);
+        listView.setAdapter(mAdapter);
 
+        // to notify app when download is complete
+        mBroadcastReciever = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                //Fetching the download id received with the broadcast
+                long downloadedId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1);
+                Iterator<Pair<Integer,Long>> iterator = mAdapter.mDownloadIdLists.iterator();
+                while(iterator.hasNext()){
+                    Pair<Integer,Long> pair = iterator.next();
+                    if(pair.second.equals(downloadedId)) {
+                        // update open Button
+                        mAdapter.notifyDataSetChanged();
+                        iterator.remove();
+                        break;
+                    }
+                }
+            }
+        };
+
+
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction(DownloadManager.ACTION_DOWNLOAD_COMPLETE);
+        registerReceiver(mBroadcastReciever, intentFilter);
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(mBroadcastReciever);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mAdapter.saveDownloadListIds();
     }
 
     public List<String> getSubTopics(String topic){

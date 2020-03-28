@@ -37,8 +37,10 @@ public class StandardCategoryActivity extends AppCompatActivity{
         }
 
         Bundle extras = getIntent().getExtras();
-        String category = extras.getString(PARAM_CATEGORY);
-        StandardArrayAdapter arrayAdapter = new StandardArrayAdapter(this, itemList, category);
+        int catValue = 0;
+        if(extras!=null)
+            catValue = extras.getInt(PARAM_CATEGORY, 0);
+        StandardArrayAdapter arrayAdapter = new StandardArrayAdapter(this, itemList, catValue);
         ListView listView = findViewById(R.id.standard_category_list_view);
         listView.setAdapter(arrayAdapter);
 

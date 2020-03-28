@@ -3,14 +3,23 @@ package com.example.atomicchemistry;
 import java.util.List;
 
 public class ChapterItem {
-    int mStdVal;
+//    int mStdVal;
     String mTitle, mUrl;
 //    int mIconResId;
     List<String> mSubTopics;
     boolean mSubTopicsCollapsed = true;
 
-    ChapterItem(int stdVal,String title, String url, List<String> subTopics){
-        mStdVal = stdVal;
+    public static final int STATUS_UNKNOWN = -1;
+    public static final int STATUS_DOWNLOAD = 0;
+    public static final int STATUS_DOWNLOADING = 1;
+    public static final int STATUS_UNAVAILABLE = 2;
+    public static final int STATUS_OPEN = 3;
+
+    int openButtonStatus = STATUS_UNKNOWN;
+
+//    ChapterItem(int stdVal,String title, String url, List<String> subTopics){
+//        mStdVal = stdVal;
+    ChapterItem(String title, String url, List<String> subTopics){
         mTitle = title;
         mUrl = url;
 //        mIconResId = iconResId;
@@ -29,9 +38,7 @@ public class ChapterItem {
 //        return mIconResId;
 //    }
 
-    public int getStdVal(){
-        return mStdVal;
-    }
+
     public List<String> getSubTopics() {
         return mSubTopics;
     }

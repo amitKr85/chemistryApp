@@ -67,7 +67,7 @@
                     android:background="@drawable/home_category_button_style"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="4dp"
                     android:layout_marginEnd="4dp"
                     android:paddingBottom="8dp"
                     android:text="@string/notes"
@@ -83,7 +83,7 @@
                     android:background="@drawable/home_category_button_style"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginBottom="4dp"
                     android:layout_marginEnd="8dp"
                     android:paddingBottom="8dp"
                     android:text="@string/imp_questions"
@@ -94,6 +94,45 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/sample_papers_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_category_button_style"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="4dp"
+                    android:paddingBottom="8dp"
+                    android:text="@string/sample_papers"
+                    android:fontFamily="sans-serif"
+                    android:drawableTop="@drawable/icon_pdhte_hue"
+                    android:onClick="onButtonClicked"/>
+
+                <Button
+                    android:id="@+id/category1_button"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_category_button_style"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="no category"
+                    android:fontFamily="sans-serif"
+                    android:drawableTop="@drawable/icon_star"
+                    android:onClick="onButtonClicked"/>
+
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

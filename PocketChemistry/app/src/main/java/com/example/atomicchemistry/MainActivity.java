@@ -1,5 +1,6 @@
 package com.example.atomicchemistry;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -11,6 +12,9 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private final String LOG_TAG = "MainActivity";
 
     public static final String[] STD_STRINGS = new String[]{"ninth","tenth", "eleventh","twelfth"};
-    public static final String[] CAT_STRINGS = new String[]{"books","solutions","notes","imp_questions"};
+    public static final String[] CAT_STRINGS = new String[]{"books","solutions","notes","imp_questions","sample_papers"};
 
     public static final String DIR = "chemistry";
 
@@ -40,26 +44,58 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.books_button:
                 Intent intentBooks = new Intent(this, StandardCategoryActivity.class);
-                intentBooks.putExtra(StandardCategoryActivity.PARAM_CATEGORY, CAT_STRINGS[0]);
+                intentBooks.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 0);
                 startActivity(intentBooks);
                 break ;
 
             case R.id.solutions_button:
                 Intent intentSol = new Intent(this, StandardCategoryActivity.class);
-                intentSol.putExtra(StandardCategoryActivity.PARAM_CATEGORY, CAT_STRINGS[1]);
+                intentSol.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 1);
                 startActivity(intentSol);
 //                notImplementedToast();
                 break;
 
             case R.id.notes_button:
-                notImplementedToast();
+                Intent intentNotes = new Intent(this, StandardCategoryActivity.class);
+                intentNotes.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 2);
+                startActivity(intentNotes);
+//                notImplementedToast();
                 break;
 
             case R.id.imp_ques_button:
-                notImplementedToast();
+                Intent intentImp = new Intent(this, StandardCategoryActivity.class);
+                intentImp.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 3);
+                startActivity(intentImp);
+//                notImplementedToast();
+                break;
+
+            case R.id.sample_papers_button:
+                Intent intentSample = new Intent(this, StandardCategoryActivity.class);
+                intentSample.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 4);
+                startActivity(intentSample);
                 break;
 
         }
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.home_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.home_settings:
+                Toast.makeText(this,"Settings clicked",Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return true;
 
     }
 
