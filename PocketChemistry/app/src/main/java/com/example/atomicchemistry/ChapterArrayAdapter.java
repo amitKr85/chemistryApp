@@ -77,7 +77,8 @@ public class ChapterArrayAdapter extends ArrayAdapter<ChapterItem> {
         chapterTextView.setText(mContext.getResources().getString(chapterResId));
         chapterTopicTextView.setText(item.getTitle());
 
-        if(mCatValue==0) {
+        // update: remove sub-topics for every category
+        if(mCatValue==-1) {
 
             // building sub-topics list
             List<String> subTopics = item.getSubTopics();

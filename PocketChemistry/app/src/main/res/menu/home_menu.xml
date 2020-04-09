@@ -2,8 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-    android:id="@+id/home_settings"
-    android:title="@string/settings"
-    android:icon="@drawable/ic_settings_white_24dp"
-    app:showAsAction="always"/>
+        android:id="@+id/home_menu_settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings_white_24dp" />
+    <item
+        android:id="@+id/home_menu_privacy_policy"
+        android:title="@string/privacy_policy"
+        android:icon="@drawable/ic_assignment_turned_in_black_24dp" />
+    <item
+        android:id="@+id/home_menu_about"
+        android:title="@string/about"
+        android:icon="@drawable/ic_info_black_24dp"/>
 </menu>

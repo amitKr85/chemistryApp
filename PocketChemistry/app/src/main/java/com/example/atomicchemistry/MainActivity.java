@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -20,14 +23,29 @@ import android.widget.Toast;
 
 import com.example.atomicchemistry.R;
 
-public class MainActivity extends AppCompatActivity {
+import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MainActivity extends AppCompatActivity implements LoadDataAsync.AsyncDataHandleCallback {
 
     private final String LOG_TAG = "MainActivity";
 
     public static final String[] STD_STRINGS = new String[]{"ninth","tenth", "eleventh","twelfth"};
     public static final String[] CAT_STRINGS = new String[]{"books","solutions","notes","imp_questions","sample_papers"};
+    public static final int CAT_BOOKS = 0;
+    public static final int CAT_SOLUTIONS = 1;
+    public static final int CAT_NOTES = 2;
+    public static final int CAT_IMP_QUESTIONS = 3;
+    public static final int CAT_SAMPLE_PAPERS = 4;
 
     public static final String DIR = "chemistry";
+
+    public static final String PREFERENCE_FILE = ".PREFERENCE_FILE";
+    public static final String LANG_KEY = "selected_language";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +53,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // requesting permission
         isStoragePermissionGranted();
+
+        SharedPreferences pref = this.getSharedPreferences(this.getPackageName()+PREFERENCE_FILE, Context.MODE_PRIVATE);
+        int selectedOption = pref.getInt(MainActivity.LANG_KEY, -1);
+        Log.i(LOG_TAG, "Current lang. :"+selectedOption);
+        if(pref.getInt(LANG_KEY,-1) == -1){
+            SharedPreferences defaultPref = this.getSharedPreferences(this.getPackageName()+PREFERENCE_FILE, Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = defaultPref.edit();
+            editor.putInt(LANG_KEY, 0);
+            editor.apply();
+        }
     }
 
     public void notImplementedToast(){
@@ -44,34 +72,33 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.books_button:
                 Intent intentBooks = new Intent(this, StandardCategoryActivity.class);
-                intentBooks.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 0);
+                intentBooks.putExtra(StandardCategoryActivity.PARAM_CATEGORY, CAT_BOOKS);
                 startActivity(intentBooks);
                 break ;
 
             case R.id.solutions_button:
                 Intent intentSol = new Intent(this, StandardCategoryActivity.class);
-                intentSol.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 1);
+                intentSol.putExtra(StandardCategoryActivity.PARAM_CATEGORY, CAT_SOLUTIONS);
                 startActivity(intentSol);
 //                notImplementedToast();
                 break;
 
             case R.id.notes_button:
                 Intent intentNotes = new Intent(this, StandardCategoryActivity.class);
-                intentNotes.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 2);
+                intentNotes.putExtra(StandardCategoryActivity.PARAM_CATEGORY, CAT_NOTES);
                 startActivity(intentNotes);
 //                notImplementedToast();
                 break;
 
             case R.id.imp_ques_button:
                 Intent intentImp = new Intent(this, StandardCategoryActivity.class);
-                intentImp.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 3);
+                intentImp.putExtra(StandardCategoryActivity.PARAM_CATEGORY, CAT_IMP_QUESTIONS);
                 startActivity(intentImp);
 //                notImplementedToast();
                 break;
 
             case R.id.sample_papers_button:
-                Intent intentSample = new Intent(this, StandardCategoryActivity.class);
-                intentSample.putExtra(StandardCategoryActivity.PARAM_CATEGORY, 4);
+                Intent intentSample = new Intent(this, SamplePapersBoardCategoryActivity.class);
                 startActivity(intentSample);
                 break;
 
@@ -89,8 +116,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
-            case R.id.home_settings:
-                Toast.makeText(this,"Settings clicked",Toast.LENGTH_SHORT).show();
+            case R.id.home_menu_settings:
+//                Toast.makeText(this,"Settings clicked",Toast.LENGTH_SHORT).show();
+                Intent settingsIntent = new Intent(this,SettingsActivity.class);
+                startActivity(settingsIntent);
+                break;
+            case R.id.home_menu_privacy_policy:
+                Toast.makeText(this,"Privacy Policy clicked",Toast.LENGTH_SHORT).show();
+                // testing
+//                Log.i(LOG_TAG, ""+new File("/sdfds", item.getTitle()+".pdf").getAbsolutePath());
+//                File file = new File()
+                String testQuery = "http://dummix.cf/chemistry/sample_papers/get_files.php?std=10&board=cbse";
+                LoadDataAsync loadDataAsync = new LoadDataAsync(UrlUtil.getUrlStringForBoards(),LoadDataAsync.RETURN_TYPE_BOARDS, this,1,2,3);
+                loadDataAsync.execute();
+                break;
+            case R.id.home_menu_about:
+                Toast.makeText(this,"About clicked",Toast.LENGTH_SHORT).show();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
@@ -146,5 +187,12 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.setCancelable(false);
         builder.create().show();
+    }
+
+    @Override
+    public void asyncDataHandleCallback(ArrayList<ArrayList<String>> list, int retType, Object ...args) {
+        Log.i(LOG_TAG," data received from LoadDataAsync");
+        Log.i(LOG_TAG, list.toString());
+        Log.i(LOG_TAG, "args:"+ Arrays.toString(args));
     }
 }
