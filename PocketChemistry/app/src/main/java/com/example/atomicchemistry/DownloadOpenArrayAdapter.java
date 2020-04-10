@@ -124,16 +124,17 @@ public class DownloadOpenArrayAdapter extends ArrayAdapter<DownloadOpenItem> {
         downloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(item.getUrl()==null){
+                File file = getFile(item);
+                // open if already exists then open
+                if(file.exists()){
+                    Toast.makeText(mContext, openingString, Toast.LENGTH_SHORT).show();
+                    downloadButton.setText(openString);
+                    openPDFFile(file);
+                }
+                else if(item.getUrl()==null){
                     Toast.makeText(mContext,R.string.source_link_not_available,Toast.LENGTH_SHORT).show();
                 }else {
-                    File file = getFile(item);
-                    // open if already exists
-                    if (file.exists()) {
-                        Toast.makeText(mContext, openingString, Toast.LENGTH_SHORT).show();
-                        downloadButton.setText(openString);
-                        openPDFFile(file);
-                    } else if (checkItemInDownloads(position)) {
+                    if (checkItemInDownloads(position)) {
                         Toast.makeText(mContext, R.string.file_already_in_downloads, Toast.LENGTH_SHORT).show();
                     }else{
                         downloadButton.setText(downloadingString);

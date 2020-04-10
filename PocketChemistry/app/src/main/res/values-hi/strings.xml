@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name = "app_name"> परमाणु रसायन विज्ञान </string>
+
+        <string name = "books"> पुस्तकें </string>
+        <string name = "solutions"> समाधान </string>
+        <string name = "notes"> नोट्स </string>
+        <string name = "imp_questions"> Imp। प्रश्न </string>
+        <string name = "sample_papers"> नमूना पेपर्स </string>
+
+        <string name = "select_standard"> मानक चुनें </string>
+        <string name = "select_standard_and_board"> मानक और बोर्ड का चयन करें </string>
+        <string name = "ninth_standard"> 9 वीं मानक </string>
+        <string name = "tenth_standard"> 10 वीं कक्षा </string>
+        <string name = "eleventh_standard"> 11 वीं मानक </string>
+        <string name = "twelfth_standard"> 12 वीं कक्षा </string>
+
+        <string name = "hide_topics"> विषय छुपाएं </string>
+        <string name = "view_topics"> विषय देखें </string>
+        <string name = "view_book"> पुस्तक देखें </string>
+        <string name = "view_solution"> व्यू सॉल्यूशन </string>
+        <string name = "view_notes"> नोट देखें </string>
+        <string name = "view_questions"> प्रश्न देखें </string>
+        <string name = "view_sample_papers"> नमूना पत्रों को देखें </string>
+        <string name = "view_subtopics"> उप-विषय देखें </string>
+        <string name = "hide_subtopics"> सब-टॉपिक्स छुपाएं </string>
+
+        <string name = "download"> डाउनलोड </string>
+        <string name = "downloading"> डाउनलोडिंग </string>
+        <string name = "open"> Open </string>
+        <string name = "opening"> Opening </string>
+        <string name = "unavailable"> अनुपलब्ध </string>
+        <string name = "source_link_not_available"> स्रोत लिंक उपलब्ध नहीं </string>
+        <string name = "file_already_in_downloads"> पहले से डाउनलोड में फ़ाइल </string>
+
+        <string name = "chapter"> Chapter </string>
+        <string name = "sample_paper"> नमूना पेपर </string>
+
+        <string name = "download_chapter"> अध्याय डाउनलोड करें </string>
+        <string name = "chapter_downloading"> डाउनलोडिंग चैप्टर </string>
+        <string name = "open_chapter"> Open Chapter </string>
+        <string name = "opening_chapter"> Opening Chapter </string>
+        <string name = "chapter_unavailable"> अध्याय अनुपलब्ध </string>
+
+        <string name = "download_solution"> डाउनलोड समाधान </string>
+        <string name = "solution_downloading"> डाउनलोडिंग समाधान </string>
+        <string name = "open_solution"> ओपन सॉल्यूशन </string>
+        <string name = "opening_solution"> ओपनिंग सॉल्यूशन </string>
+        <string name = "solution_unavailable"> समाधान अनुपलब्ध </string>
+
+        <string name = "download_notes"> डाउनलोड नोट्स </string>
+        <string name = "notes_downloading"> नोट्स डाउनलोड करना </string>
+        <string name = "open_notes"> ओपन नोट्स </string>
+        <string name = "opening_notes"> नोट्स खोलना </string>
+        <string name = "notes_unavailable"> नोट्स अनुपलब्ध </string>
+
+        <string name = "download_questions"> डाउनलोड प्रश्न </string>
+        <string name = "questions_downloading"> डाउनलोडिंग प्रश्न </string>
+        <string name = "open_questions"> खुले प्रश्न </string>
+        <string name = "opening_questions"> खुलने वाले प्रश्न </string>
+        <string name = "questions_unavailable"> प्रश्न अनुपलब्ध </string>
+
+        <string name = "download_sample_papers"> नमूना पत्र डाउनलोड करें </string>
+        <string name = "sample_papers_downloading"> सैंपल पेपर्स डाउनलोड करना </string>
+        <string name = "open_sample_papers"> ओपन सैंपल पेपर्स </string>
+        <string name = "opening_sample_papers"> सैंपल पेपर खोलना </string>
+        <string name = "sample_papers_unavailable"> नमूना पत्र अनुपलब्ध </string>
+
+    <string name = "settings"> Settings </string>
+        <string name = "privacy_policy"> गोपनीयता नीति </string>
+        <string name = "about"> About </string>
+        <string name = "language"> भाषा </string>
+        <string-array name = "languages">
+            <item> English </item>
+            <item> हिन्दी </item>
+        </string-array>
+        <string name = "language_english"> अंग्रेजी </string>
+        <string name = "language_hindi"> हिंदी </string>
+
+        <string name = "loading_data"> लोड हो रहा है </string>
+        <string name = "wait_while_fetching_the_data"> डेटा लाते समय प्रतीक्षा करें </string>
+        <string name = "no_internet_connection_found"> ​​कोई इंटरनेट कनेक्शन नहीं मिला </string>
+        <string name = "unable_to_fetch_data_from_server"> सर्वर से डेटा लाने में असमर्थ </string>
+        <string name = "unable_to_fetch_data"> डेटा लाने में असमर्थ </string>
+
+        <string name = "chapter_1"> Chapter 1 </string>
+        <string name = "chapter_2"> Chapter 2 </string>
+        <string name = "chapter_3"> Chapter 3 </string>
+        <string name = "chapter_4"> Chapter 4 </string>
+        <string name = "chapter_5"> Chapter 5 </string>
+        <string name = "chapter_6"> Chapter 6 </string>
+        <string name = "chapter_7"> Chapter 7 </string>
+        <string name = "chapter_8"> Chapter 8 </string>
+        <string name = "chapter_9"> Chapter 9 </string>
+        <string name = "chapter_10"> Chapter 10 </string>
+        <string name = "chapter_11"> Chapter 11 </string>
+
+
+        <string-array name = "ninth_topics">
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+        </string-array>
+        <string-array name = "ninth_dummy_chapter_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+
+        <string-array name = "tenth_topics">
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+            <item> डमी अध्याय </item>
+        </string-array>
+        <string-array name = "tenth_dummy_chapter_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+
+    <string-array name = "eleventh_topics">
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+                <item> डमी अध्याय </item>
+            </string-array>
+            <string-array name = "eleventh_dummy_chapter_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+
+        <string-array name = "twelfth_topics">
+            <item> ठोस राज्य </item>
+            <item> समाधान </item>
+            <item> Electrochemistry </item>
+            <item> रासायनिक कैनेटीक्स </item>
+            <item> भूतल रसायन विज्ञान </item>
+            <item> तत्वों के अलगाव के सामान्य सिद्धांत और प्रक्रियाएं </item>
+            <item> पी-ब्लॉक तत्व </item>
+            <item> डी-और एफ-ब्लॉक तत्व </item>
+            <item> समन्वय यौगिकों </item>
+        </string-array>
+        <string-array name = "twelfth_the_solid_state_sub_topics">
+            <item> ठोस राज्य के सामान्य लक्षण </item>
+            <item> अनाकार और क्रिस्टलीय ठोस </item>
+            <item> क्रिस्टलीय ठोस का वर्गीकरण </item>
+            <item> क्रिस्टल जाली और यूनिट सेल </item>
+        </string-array>
+        <string-array name = "twelfth_solutions_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_electrochemistry_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_chemical_kinetics_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_surface_chemistry_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_general_principles_and_processes_of_isolation_of_elements_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_the_p_block_elements_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_the_d_and_f_block_elements_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+        <string-array name = "twelfth_coordination_compounds_sub_topics">
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+            <item> डमी उप-विषय </item>
+        </string-array>
+</resources>

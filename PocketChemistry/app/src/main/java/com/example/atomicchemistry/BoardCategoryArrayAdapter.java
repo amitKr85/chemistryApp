@@ -37,8 +37,8 @@ public class BoardCategoryArrayAdapter extends ArrayAdapter<BoardCategoryItem> {
 
         final BoardCategoryItem item = getItem(position);
         final int stdValue = item.getStdValue();
-        int titleResId = mContext.getResources().getIdentifier(MainActivity.STD_STRINGS[stdValue-9]+"_standard","string",mContext.getPackageName());
-        int iconResId = mContext.getResources().getIdentifier("icon_"+String.valueOf(stdValue),"drawable", mContext.getPackageName());
+        int titleResId = ResUtil.getStandardStringId(mContext, stdValue); //mContext.getResources().getIdentifier(MainActivity.STD_STRINGS[stdValue-9]+"_standard","string",mContext.getPackageName());
+        int iconResId = ResUtil.getNumberImageResID(mContext, stdValue); //mContext.getResources().getIdentifier("icon_"+String.valueOf(stdValue),"drawable", mContext.getPackageName());
 
         imageView.setImageResource(iconResId);
         stdTextView.setText(titleResId);
@@ -50,7 +50,7 @@ public class BoardCategoryArrayAdapter extends ArrayAdapter<BoardCategoryItem> {
             button.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    LoadDataAsync loadDataAsync = new LoadDataAsync(UrlUtil.getUrlStringForFiles(stdValue, board),
+                    LoadDataAsync loadDataAsync = new LoadDataAsync(UrlUtil.getUrlStringForFiles(mContext, stdValue, board),
                             LoadDataAsync.RETURN_TYPE_FILES,
                             mContext,
                             stdValue, board);

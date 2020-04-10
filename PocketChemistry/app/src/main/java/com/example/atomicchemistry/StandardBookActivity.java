@@ -84,15 +84,15 @@ public class StandardBookActivity extends AppCompatActivity {
             mCatValue = bundle.getInt(PARAM_CATEGORY, 0);
         }
 
-        int titleResID = getResources().getIdentifier(MainActivity.STD_STRINGS[mStdVal-9]+"_standard","string", getPackageName());
+        int titleResID = ResUtil.getStandardStringId(this,mStdVal);//getResources().getIdentifier(MainActivity.STD_STRINGS[mStdVal-9]+"_standard","string", getPackageName());
         String headTitle = getResources().getString(titleResID);
 
         //////////////////////
         setTitle(titleResID);
 
         // getting source urls
-        int arrResId = getResources().getIdentifier(MainActivity.STD_STRINGS[mStdVal-9]+"_topics","array",getPackageName());
-        List<String> topics = Arrays.asList(getResources().getStringArray(arrResId));
+//        int arrResId = ResUtil.getStandardTopicArrayId(this, mStdVal); //getResources().getIdentifier(MainActivity.STD_STRINGS[mStdVal-9]+"_topics","array",getPackageName());
+        List<String> topics = ResUtil.getStandardTopics(this, mStdVal); //Arrays.asList(getResources().getStringArray(arrResId));
 //        List<List<String>> urlsList = bookUrlList;
 //        if(mCatValue==1)
 //            urlsList = solutionUrlList;
@@ -115,15 +115,15 @@ public class StandardBookActivity extends AppCompatActivity {
 //        }
         ArrayList<DownloadOpenItem> itemList = new ArrayList<>();
         for(int i=0;i<topics.size();++i){
-            String superTitle = getResources().getString(R.string.chapter)+(i+1);
+            String superTitle = getResources().getString(R.string.chapter)+" " +(i+1);
             String title = topics.get(i);
             String url = i<urls.size() ? urls.get(i) : null;
-            int iconResId = getResources().getIdentifier("icon_"+(i+1), "drawable", getPackageName());
-            String buttonText = MainActivity.CAT_STRINGS[mCatValue];
+            int iconResId = ResUtil.getNumberImageResID(this, i+1);//getResources().getIdentifier("icon_"+(i+1), "drawable", getPackageName());
+            String buttonText = getResources().getString(MainActivity.CAT_STRINGS_ID[mCatValue]); //MainActivity.CAT_STRINGS[mCatValue];
             itemList.add(new DownloadOpenItem(superTitle,title,url,iconResId,buttonText));
         }
 
-        String workingDir = MainActivity.CAT_STRINGS[mCatValue]+ File.separator +mStdVal;
+        String workingDir = FileUtil.getWorkingDir(this, mCatValue, mStdVal); //MainActivity.CAT_STRINGS[mCatValue]+ File.separator +mStdVal + File.separator + ;
 
         Intent intent = new Intent(this, DownloadOpenActivity.class);
         intent.putExtra(DownloadOpenActivity.PARAM_TITLE, headTitle);

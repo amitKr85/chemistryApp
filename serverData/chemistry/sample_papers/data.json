@@ -1,0 +1,434 @@
+[
+    {
+        "standard": 9, 
+        "boards":[
+            {
+                "board": "cbse",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "cbse_en9_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_en9_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_en9_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "cbse_hi9_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_hi9_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_hi9_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "bseb",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "bseb_en9_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_en9_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_en9_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "bseb_hi9_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_hi9_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_hi9_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "other",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "other_en9_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_en9_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_en9_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "other_hi9_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_hi9_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_hi9_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            }]
+            
+        
+    },
+    {
+        "standard": 10, 
+        "boards":[
+            {
+                "board": "cbse",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "cbse_en10_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_en10_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_en10_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "cbse_hi10_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_hi10_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_hi10_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "bseb",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "bseb_en10_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_en10_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_en10_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "bseb_hi10_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_hi10_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_hi10_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "other",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "other_en10_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_en10_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_en10_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "other_hi10_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_hi10_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_hi10_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            }]
+            
+        
+    },
+    {
+        "standard": 11, 
+        "boards":[
+            {
+                "board": "cbse",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "cbse_en11_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_en11_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_en11_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "cbse_hi11_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_hi11_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_hi11_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "bseb",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "bseb_en11_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_en11_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_en11_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "bseb_hi11_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_hi11_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_hi11_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "other",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "other_en11_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_en11_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_en11_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "other_hi11_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_hi11_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_hi11_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            }]
+            
+        
+    },
+    {
+        "standard": 12, 
+        "boards":[
+            {
+                "board": "cbse",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "cbse_en12_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_en12_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_en12_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "cbse_hi12_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "cbse_hi12_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "cbse_hi12_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "bseb",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "bseb_en12_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_en12_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_en12_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "bseb_hi12_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "bseb_hi12_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "bseb_hi12_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            },
+            {
+                "board": "other",
+                "languages":[{
+                	"language":"en",
+                	"files":[{
+	                    "name": "other_en12_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_en12_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_en12_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]
+                },
+                {
+                	"language":"hi",
+                	"files":[{
+	                    "name": "other_hi12_dummy1",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"  
+	                },
+	                {
+	                    "name": "other_hi12_dummy2",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                },
+	                {
+	                    "name": "other_hi12_dummy3",
+	                    "url": "http://dummix.cf/assignment_ga.pdf"
+	                }]	
+                }]
+                
+            }]
+            
+        
+    }
+]

@@ -38,6 +38,7 @@ public class SamplePapersBoardCategoryActivity extends AppCompatActivity impleme
             Toast.makeText(this, R.string.unable_to_fetch_data_from_server, Toast.LENGTH_SHORT).show();
         }
         if(retType == LoadDataAsync.RETURN_TYPE_BOARDS) {
+            // getting available boards for each standard in offline mode
             String baseSamplePapersDir = MainActivity.CAT_STRINGS[MainActivity.CAT_SAMPLE_PAPERS];
             ArrayList<BoardCategoryItem> stdBoardList = new ArrayList<>();
             for (int i = 9; i < 13; ++i) {
@@ -73,14 +74,15 @@ public class SamplePapersBoardCategoryActivity extends AppCompatActivity impleme
 
             int stdValue = (Integer) args[0];
             String board = (String) args[1];
-            int titleResId = getResources().getIdentifier(MainActivity.STD_STRINGS[stdValue-9]+"_standard","string",getPackageName());
-            String title = getResources().getString(titleResId);
-            String workingDir = MainActivity.CAT_STRINGS[MainActivity.CAT_SAMPLE_PAPERS]+File.separator+stdValue+File.separator+board;
+//            int titleResId = ResUtil.getStandardStringId(this, stdValue); //getResources().getIdentifier(MainActivity.STD_STRINGS[stdValue-9]+"_standard","string",getPackageName());
+            String title = ResUtil.getStandardString(this, stdValue); //getResources().getString(titleResId);
+            String workingDir = FileUtil.getWorkingDirOfSamplePapersForBoard(this, stdValue, board); //MainActivity.CAT_STRINGS[MainActivity.CAT_SAMPLE_PAPERS]+File.separator+stdValue+File.separator+board;
 
             ArrayList<DownloadOpenItem> dOList = new ArrayList<>();
             // to keep track of added files
             HashSet<String> pdfFiles = new HashSet<>();
             // adding data from local files
+            // getting all the files for the standard and the board available in offline mode
             File[] filesInDir = FileUtil.getFileAtExternalFilesDir(this, workingDir).listFiles();
             if(filesInDir != null)
                 for (File file : filesInDir) {
@@ -89,7 +91,7 @@ public class SamplePapersBoardCategoryActivity extends AppCompatActivity impleme
                         String fileTitle = name.substring(0, name.length() - 4);
                         String url = null;
                         String superTitle = getResources().getString(R.string.sample_paper) + " " + (pdfFiles.size() + 1);
-                        int iconResId = getResources().getIdentifier("icon_" + (pdfFiles.size() + 1), "drawable", getPackageName());
+                        int iconResId = ResUtil.getNumberImageResID(this, pdfFiles.size()+1); //getResources().getIdentifier("icon_" + (pdfFiles.size() + 1), "drawable", getPackageName());
                         String buttonText = getResources().getString(R.string.sample_paper);
                         DownloadOpenItem item = new DownloadOpenItem(superTitle, fileTitle, url, iconResId, buttonText);
                         dOList.add(item);
@@ -104,7 +106,7 @@ public class SamplePapersBoardCategoryActivity extends AppCompatActivity impleme
                     continue;
                 String superTitle = getResources().getString(R.string.sample_paper) + " " + (pdfFiles.size()+1);
                 String url = list.get(0).get(1);
-                int icondRedId = getResources().getIdentifier("icon_"+(pdfFiles.size()+1), "drawable", getPackageName());
+                int icondRedId = ResUtil.getNumberImageResID(this, pdfFiles.size()+1); //getResources().getIdentifier("icon_"+(pdfFiles.size()+1), "drawable", getPackageName());
                 String buttonText = getResources().getString(R.string.sample_paper);
                 DownloadOpenItem item = new DownloadOpenItem(superTitle, fileTitle, url, icondRedId, buttonText);
                 dOList.add(item);
@@ -123,8 +125,8 @@ public class SamplePapersBoardCategoryActivity extends AppCompatActivity impleme
                 startActivity(intent);
             }
 
-            // Hindi language
-
+            // TODO: work from here
+            // update server data and API and test sample papers functioning
         }
 
 

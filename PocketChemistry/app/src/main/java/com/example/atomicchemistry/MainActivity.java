@@ -19,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.atomicchemistry.R;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements LoadDataAsync.Asy
 
     public static final String[] STD_STRINGS = new String[]{"ninth","tenth", "eleventh","twelfth"};
     public static final String[] CAT_STRINGS = new String[]{"books","solutions","notes","imp_questions","sample_papers"};
+    public static final int[] CAT_STRINGS_ID = new int[]{R.string.books, R.string.solutions,R.string.notes, R.string.imp_questions,R.string.sample_papers};
     public static final int CAT_BOOKS = 0;
     public static final int CAT_SOLUTIONS = 1;
     public static final int CAT_NOTES = 2;
@@ -45,30 +47,54 @@ public class MainActivity extends AppCompatActivity implements LoadDataAsync.Asy
 
     public static final String PREFERENCE_FILE = ".PREFERENCE_FILE";
     public static final String LANG_KEY = "selected_language";
+    public static final String LANG_EN = "en";
+    public static final String LANG_HI = "hi";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        ////////////////////////////start working from here ///////////////////////////////////////////////
+        // check for every string and put string manually using ResUtil
+        // add language folder /// fix server data json and php APIs
+
         setContentView(R.layout.activity_main);
         // requesting permission
         isStoragePermissionGranted();
 
-        SharedPreferences pref = this.getSharedPreferences(this.getPackageName()+PREFERENCE_FILE, Context.MODE_PRIVATE);
-        int selectedOption = pref.getInt(MainActivity.LANG_KEY, -1);
-        Log.i(LOG_TAG, "Current lang. :"+selectedOption);
-        if(pref.getInt(LANG_KEY,-1) == -1){
-            SharedPreferences defaultPref = this.getSharedPreferences(this.getPackageName()+PREFERENCE_FILE, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = defaultPref.edit();
-            editor.putInt(LANG_KEY, 0);
+        SharedPreferences pref = FileUtil.getSharedPreferences(this);
+        if(pref.getString(LANG_KEY,"None").equals("None")){
+            Log.i(LOG_TAG, "setting up language for first time to en");
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putString(LANG_KEY, LANG_EN);
             editor.apply();
         }
+
+        ResUtil.setLocale(this);
+        setUIStrings();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        setUIStrings();
+    }
+
+    public void setUIStrings(){
+        setTitle(R.string.app_name);
+        ((Button)findViewById(R.id.books_button)).setText(R.string.books);
+        ((Button)findViewById(R.id.solutions_button)).setText(R.string.solutions);
+        ((Button)findViewById(R.id.notes_button)).setText(R.string.notes);
+        ((Button)findViewById(R.id.imp_ques_button)).setText(R.string.imp_questions);
+        ((Button)findViewById(R.id.sample_papers_button)).setText(R.string.sample_papers);
     }
 
     public void notImplementedToast(){
         Toast.makeText(this, "not yet implemented",Toast.LENGTH_SHORT).show();
     }
     public void onButtonClicked(View view){
+
         switch (view.getId()){
             case R.id.books_button:
                 Intent intentBooks = new Intent(this, StandardCategoryActivity.class);
@@ -98,6 +124,9 @@ public class MainActivity extends AppCompatActivity implements LoadDataAsync.Asy
                 break;
 
             case R.id.sample_papers_button:
+                //////////////////////// TODO: work from here
+                /// update data.json and php API files
+                // update for sample papers
                 Intent intentSample = new Intent(this, SamplePapersBoardCategoryActivity.class);
                 startActivity(intentSample);
                 break;
@@ -108,6 +137,7 @@ public class MainActivity extends AppCompatActivity implements LoadDataAsync.Asy
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // TODO: setup String acc. to lang
         MenuInflater inflater=getMenuInflater();
         inflater.inflate(R.menu.home_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -126,9 +156,9 @@ public class MainActivity extends AppCompatActivity implements LoadDataAsync.Asy
                 // testing
 //                Log.i(LOG_TAG, ""+new File("/sdfds", item.getTitle()+".pdf").getAbsolutePath());
 //                File file = new File()
-                String testQuery = "http://dummix.cf/chemistry/sample_papers/get_files.php?std=10&board=cbse";
-                LoadDataAsync loadDataAsync = new LoadDataAsync(UrlUtil.getUrlStringForBoards(),LoadDataAsync.RETURN_TYPE_BOARDS, this,1,2,3);
-                loadDataAsync.execute();
+//                String testQuery = "http://dummix.cf/chemistry/sample_papers/get_files.php?std=10&board=cbse";
+//                LoadDataAsync loadDataAsync = new LoadDataAsync(UrlUtil.getUrlStringForBoards(),LoadDataAsync.RETURN_TYPE_BOARDS, this,1,2,3);
+//                loadDataAsync.execute();
                 break;
             case R.id.home_menu_about:
                 Toast.makeText(this,"About clicked",Toast.LENGTH_SHORT).show();
